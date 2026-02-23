@@ -1,0 +1,35 @@
+# Project context (not for public repo)
+PROJECT.md
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (real data should never be committed)
+data/real/
+data/*.db
+data/generated/
+
+# pytest
+.pytest_cache/
