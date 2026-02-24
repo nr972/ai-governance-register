@@ -6,6 +6,8 @@ Internal AI system registry and governance tracker. Captures AI systems an organ
 
 Part of the Legal Quant portfolio. See `PORTFOLIO_STANDARDS.md` for cross-project conventions.
 
+**MIT License.** The copyright line in the LICENSE file must read: `Copyright (c) 2026 Noam Raz and Pleasant Secret Labs`.
+
 ## Architecture
 
 **API-first pattern:** FastAPI backend handles all business logic. Streamlit is a thin frontend that calls the API via HTTP.
