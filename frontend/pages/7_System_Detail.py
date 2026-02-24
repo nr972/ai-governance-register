@@ -2,8 +2,8 @@
 
 import streamlit as st
 
-from frontend.utils.api_client import api_delete, api_get, api_put
-from frontend.utils.constants import (
+from utils.api_client import api_delete, api_get, api_put
+from utils.constants import (
     ASSESSMENT_STATUS_COLORS,
     ASSESSMENT_STATUS_LABELS,
     BIAS_TESTING_LABELS,
@@ -19,7 +19,7 @@ st.set_page_config(page_title="System Detail", page_icon="🤖", layout="wide")
 system_id = st.query_params.get("system_id")
 if not system_id:
     st.warning("No system selected. Go to AI Systems to pick one.")
-    st.page_link("frontend/pages/2_AI_Systems.py", label="Go to AI Systems")
+    st.page_link("pages/2_AI_Systems.py", label="Go to AI Systems")
     st.stop()
 
 system = api_get(f"/api/systems/{system_id}")
@@ -101,14 +101,14 @@ with tab_assessments:
             with cols[2]:
                 if st.button("View", key=f"assess_{a['id']}"):
                     st.query_params["assessment_id"] = a["id"]
-                    st.switch_page("frontend/pages/6_Assessment_Detail.py")
+                    st.switch_page("pages/6_Assessment_Detail.py")
             st.divider()
     else:
         st.info("No assessments for this system yet.")
 
     if st.button("Create Assessment for This System"):
         st.query_params["system_id"] = system_id
-        st.switch_page("frontend/pages/5_Assessments.py")
+        st.switch_page("pages/5_Assessments.py")
 
 # -- History tab ------------------------------------------------------------
 with tab_history:
@@ -196,4 +196,4 @@ with tab_edit:
         if st.button("Confirm Delete", type="primary", key="confirm_delete"):
             if api_delete(f"/api/systems/{system_id}"):
                 st.success("System deleted.")
-                st.switch_page("frontend/pages/2_AI_Systems.py")
+                st.switch_page("pages/2_AI_Systems.py")

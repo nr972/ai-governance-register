@@ -3,8 +3,8 @@
 import requests
 import streamlit as st
 
-from frontend.utils.api_client import api_get, api_patch, api_put, get_export_url
-from frontend.utils.constants import (
+from utils.api_client import api_get, api_patch, api_put, get_export_url
+from utils.constants import (
     ASSESSMENT_STATUS_COLORS,
     ASSESSMENT_STATUS_LABELS,
     risk_badge,
@@ -16,7 +16,7 @@ st.set_page_config(page_title="Assessment Detail", page_icon="📝", layout="wid
 assessment_id = st.query_params.get("assessment_id")
 if not assessment_id:
     st.warning("No assessment selected. Go to Assessments to pick one.")
-    st.page_link("frontend/pages/5_Assessments.py", label="Go to Assessments")
+    st.page_link("pages/5_Assessments.py", label="Go to Assessments")
     st.stop()
 
 assessment = api_get(f"/api/assessments/{assessment_id}")

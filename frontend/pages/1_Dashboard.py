@@ -3,8 +3,8 @@
 import plotly.express as px
 import streamlit as st
 
-from frontend.utils.api_client import api_get
-from frontend.utils.constants import RISK_TIER_COLORS, RISK_TIER_LABELS
+from utils.api_client import api_get
+from utils.constants import RISK_TIER_COLORS, RISK_TIER_LABELS
 
 st.set_page_config(page_title="Dashboard", page_icon="📊", layout="wide")
 st.title("Governance Dashboard")

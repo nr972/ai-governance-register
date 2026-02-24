@@ -2,8 +2,8 @@
 
 import streamlit as st
 
-from frontend.utils.api_client import api_get, api_post
-from frontend.utils.constants import (
+from utils.api_client import api_get, api_post
+from utils.constants import (
     BIAS_TESTING_LABELS,
     RISK_TIER_LABELS,
     STATUS_LABELS,
@@ -188,4 +188,4 @@ if st.button("Register System", type="primary"):
             st.session_state.classification_result = None
             st.session_state.llm_result = None
             st.query_params["system_id"] = result["id"]
-            st.switch_page("frontend/pages/7_System_Detail.py")
+            st.switch_page("pages/7_System_Detail.py")

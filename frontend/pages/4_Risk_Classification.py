@@ -2,8 +2,8 @@
 
 import streamlit as st
 
-from frontend.utils.api_client import api_post
-from frontend.utils.constants import (
+from utils.api_client import api_post
+from utils.constants import (
     RISK_TIER_COLORS,
     RISK_TIER_LABELS,
     USE_CASE_LABELS,

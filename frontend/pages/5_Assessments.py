@@ -2,8 +2,8 @@
 
 import streamlit as st
 
-from frontend.utils.api_client import api_get, api_post
-from frontend.utils.constants import (
+from utils.api_client import api_get, api_post
+from utils.constants import (
     ASSESSMENT_STATUS_COLORS,
     ASSESSMENT_STATUS_LABELS,
     RISK_TIER_LABELS,
@@ -57,7 +57,7 @@ with st.expander("Create New Assessment"):
                 if result:
                     st.success(f"Assessment '{result['title']}' created!")
                     st.query_params["assessment_id"] = result["id"]
-                    st.switch_page("frontend/pages/6_Assessment_Detail.py")
+                    st.switch_page("pages/6_Assessment_Detail.py")
     else:
         st.info("Register an AI system first.")
 
@@ -94,5 +94,5 @@ for a in assessments:
         with cols[3]:
             if st.button("View", key=f"view_assess_{a['id']}"):
                 st.query_params["assessment_id"] = a["id"]
-                st.switch_page("frontend/pages/6_Assessment_Detail.py")
+                st.switch_page("pages/6_Assessment_Detail.py")
     st.divider()

@@ -13,7 +13,7 @@ st.set_page_config(
 with st.sidebar:
     st.title("AI Governance Register")
 
-    from frontend.utils.api_client import api_health
+    from utils.api_client import api_health
 
     healthy = api_health()
     if healthy:
@@ -38,32 +38,32 @@ st.divider()
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.page_link("frontend/pages/1_Dashboard.py", label="Dashboard", icon="📊")
+    st.page_link("pages/1_Dashboard.py", label="Dashboard", icon="📊")
     st.caption("View governance posture and risk distribution.")
 with col2:
-    st.page_link("frontend/pages/2_AI_Systems.py", label="AI Systems", icon="🤖")
+    st.page_link("pages/2_AI_Systems.py", label="AI Systems", icon="🤖")
     st.caption("Browse and manage registered AI systems.")
 with col3:
     st.page_link(
-        "frontend/pages/3_Register_System.py", label="Register System", icon="➕"
+        "pages/3_Register_System.py", label="Register System", icon="➕"
     )
     st.caption("Register a new AI system.")
 
 col4, col5, col6 = st.columns(3)
 with col4:
     st.page_link(
-        "frontend/pages/4_Risk_Classification.py",
+        "pages/4_Risk_Classification.py",
         label="Risk Classification",
         icon="⚖️",
     )
     st.caption("Classify an AI system's risk tier.")
 with col5:
-    st.page_link("frontend/pages/5_Assessments.py", label="Assessments", icon="📝")
+    st.page_link("pages/5_Assessments.py", label="Assessments", icon="📝")
     st.caption("Manage impact assessments.")
 with col6:
     # Seed data button
     if st.button("Load Sample Data"):
-        from frontend.utils.api_client import api_post
+        from utils.api_client import api_post
 
         result = api_post("/api/seed", {})
         if result:

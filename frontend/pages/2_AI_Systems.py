@@ -2,8 +2,8 @@
 
 import streamlit as st
 
-from frontend.utils.api_client import api_get
-from frontend.utils.constants import (
+from utils.api_client import api_get
+from utils.constants import (
     RISK_TIER_LABELS,
     STATUS_LABELS,
     risk_badge,
@@ -43,7 +43,7 @@ if systems is None:
 
 if len(systems) == 0:
     st.info("No AI systems found. Register one or load sample data.")
-    st.page_link("frontend/pages/3_Register_System.py", label="Register New System", icon="➕")
+    st.page_link("pages/3_Register_System.py", label="Register New System", icon="➕")
     st.stop()
 
 st.caption(f"{len(systems)} system(s) found")
@@ -62,5 +62,5 @@ for s in systems:
         with cols[4]:
             if st.button("View", key=f"view_{s['id']}"):
                 st.query_params["system_id"] = s["id"]
-                st.switch_page("frontend/pages/7_System_Detail.py")
+                st.switch_page("pages/7_System_Detail.py")
     st.divider()
