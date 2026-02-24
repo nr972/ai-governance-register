@@ -104,6 +104,21 @@ All projects share:
 
 ---
 
+## Dependency Classification for Docker
+
+Dockerfiles install with `pip install .`, which only installs core `[project.dependencies]` — it skips `[project.optional-dependencies]`. This means any package required at runtime must be in core dependencies, not dev extras.
+
+**Core `[project.dependencies]`** — packages the app needs to run:
+- `streamlit`, `requests`, `httpx` (if used by the frontend or app at runtime)
+- `fastapi`, `uvicorn`, `sqlalchemy`, `pydantic`, `anthropic`, `docxtpl`, etc.
+
+**Dev `[project.optional-dependencies]`** — packages only used for testing, linting, and local development:
+- `pytest`, `pytest-asyncio`, `httpx` (only if used solely for test clients), `ruff`, etc.
+
+**Rule of thumb:** If the Docker container would crash without it, it's a core dependency.
+
+---
+
 ## Lessons Learned (NDA Generator)
 
 1. **Two-terminal problem:** Users don't know they need separate terminals for API and frontend. Startup scripts solve this.
