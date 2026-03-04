@@ -40,7 +40,7 @@ ai-governance-register/
 │   └── services/           # Business logic
 │       ├── risk_classifier.py  # EU AI Act + NIST classification
 │       └── assessment.py       # Impact assessment generation
-├── frontend/               # Streamlit app
+├── agr_frontend/           # Streamlit app
 │   ├── app.py              # Main Streamlit entry point
 │   └── pages/              # Streamlit multipage app
 ├── data/
@@ -118,7 +118,7 @@ Write tests for:
 uvicorn api.main:app --reload --port 8000
 
 # Start frontend only
-streamlit run frontend/app.py --server.port 8501
+streamlit run agr_frontend/app.py --server.port 8501
 
 # Run tests
 pytest tests/ -v

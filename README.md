@@ -88,7 +88,7 @@ ai-governance-register/
 │       ├── assessment.py       # Assessment template generation
 │       ├── export.py           # PDF and DOCX export
 │       └── audit.py            # Version history / audit logging
-├── frontend/                   # Streamlit frontend
+├── agr_frontend/               # Streamlit frontend
 │   ├── app.py                  # Main entry point
 │   ├── pages/                  # Multipage app pages
 │   └── utils/                  # API client, constants

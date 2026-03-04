@@ -41,7 +41,7 @@ timeout /t 3 /nobreak >nul
 
 REM Start Streamlit
 echo Starting frontend on port 8501...
-start /b "Frontend" streamlit run frontend/app.py --server.port 8501 --server.headless true
+start /b "Frontend" streamlit run agr_frontend/app.py --server.port 8501 --server.headless true
 
 REM Wait and open browser
 timeout /t 3 /nobreak >nul

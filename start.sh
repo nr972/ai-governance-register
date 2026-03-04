@@ -66,7 +66,7 @@ done
 
 # Start Streamlit
 echo "Starting frontend on port 8501..."
-streamlit run frontend/app.py --server.port 8501 --server.headless true &
+streamlit run agr_frontend/app.py --server.port 8501 --server.headless true &
 FRONTEND_PID=$!
 
 # Wait a moment, then open browser

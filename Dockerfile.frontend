@@ -4,8 +4,8 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir streamlit requests plotly
 
-COPY frontend/ frontend/
+COPY agr_frontend/ agr_frontend/
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "frontend/app.py", "--server.port", "8501", "--server.headless", "true", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "agr_frontend/app.py", "--server.port", "8501", "--server.headless", "true", "--server.address", "0.0.0.0"]
